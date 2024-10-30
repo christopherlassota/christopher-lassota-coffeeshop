@@ -110,7 +110,19 @@ a {
     font-size: 1.3rem;
     font-weight: 400;
     margin-top: 1.25rem;
-    padding: 0.625rem;
+    padding: 0.75rem 1.25rem 1rem 1.25rem;
+    position: relative;
+}
+
+.hero__button::before {
+    content: '';
+    position: absolute;
+    background: transparent;
+    border: 0.125rem solid #393939;
+    width: 9.5rem;
+    height: 3rem;
+    bottom: 0.3125rem;
+    right: 0.3125rem;
 }
 
 .hero__image {
@@ -189,7 +201,19 @@ a {
     display: block;
     min-width: 100;
     margin: 5% auto;
-    padding: 1% 2%;
+    padding: 0.75rem 1.25rem 1rem 1.25rem;
+    position: relative;
+}
+
+.product__link::before {
+    content: '';
+    background: transparent;
+    border: 2px solid #393939;
+    position: absolute;
+    width: 8.2rem;
+    height: 3rem;
+    bottom: 5px;
+    right: 5px;
 }
 
 .different {
@@ -204,6 +228,8 @@ a {
     flex-direction: column;
     justify-content: space-evenly;
     width: 30%;
+    position: relative;
+    z-index: 1;
 }
 
 .different__title {
@@ -228,11 +254,26 @@ a {
 
 .different__button {
     text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.3rem;
     color: #FFF;
     background-color: #5bacc3;
     border: none;
     width: 180px;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1.25rem 1rem 1.25rem;
+    position: absolute;
+}
+
+.different__button::before {
+    content: '';
+    background: transparent;
+    position: absolute;
+    border: 2px solid #393939;
+    width: 11rem;
+    height: 3rem;
+    z-index: 1;
+    bottom: 0.25rem;
+    right: 0.3125rem;
 }
 
 .different__frame {
@@ -240,12 +281,25 @@ a {
     background-position: cover;
     background-size: cover;
     width: 25rem;
+    height: 25rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
-.different__picture {}
+.different__frame::after {
+    content: '';
+    background: transparent;
+    width: 25rem;
+    height: 25rem;
+    border: 0.3125rem solid #5bacc3;
+    position: absolute;
+    right: 0.625rem;
+    bottom: 0.625rem;
+} 
+
+/* .different__picture {} */
 
 .discount {
     background-color: #fff;

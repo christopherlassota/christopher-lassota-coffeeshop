@@ -4,6 +4,21 @@ body {
     margin: 0;
 }
 
+h1 {
+    font-size: 3.75rem;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 3.75rem;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
 a {
     text-decoration: none;
     font-weight: 400;
@@ -191,21 +206,45 @@ a {
     width: 30%;
 }
 
-.different__title {}
-.different_description {}
+.different__title {
+    margin: 1.25rem 0;
+}
+
+.different_description {
+    margin: 0;
+}
 
 .different__icon {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1.25rem;
 }
 
 .different__art {
-    width: 15%;
+    width: 10%;
 }
 
 .different__link {}
-.different__button {}
-.different__frame {}
+
+.different__button {
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: #5bacc3;
+    border: none;
+    width: 180px;
+    padding: 0.75rem 1.25rem;
+}
+
+.different__frame {
+    background-image: url(../assets/images/coldbrewbackground.png);
+    background-position: cover;
+    background-size: cover;
+    width: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .different__picture {}
 
 .discount {

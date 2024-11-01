@@ -1,0 +1,162 @@
+@use './partials/global' as *;
+
+.header {
+
+    background-color: $color-bg-light;
+    display: flex;
+    justify-content: space-between;
+
+    &__logo {
+        padding-left: 1.25rem;
+    }
+
+    &__title {
+        font-size: 3.75rem;
+        color: $color-bg-dark;
+        margin: 0;
+        display: inline-block;
+        padding: 1.25rem 0;
+    }
+
+    &__name {
+        font-weight: 300;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__item {
+        list-style-type: none;
+        display: inline-block;
+        color: $color-bg-dark;
+        padding: 0px 1.25rem;
+    }
+
+    &__link {
+        font-size: 1.3125rem;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        &--selected {
+            color: $color-highlight;
+        }
+    }
+}
+
+.menu {
+
+    &__title-box {
+        background-image: url(../assets/images/coffee-circle.jpg);
+        height: 35rem;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        text-align: center;
+        color: $color-white;
+        font-weight: 300;
+        font-size: 3.75rem;
+        width: 18.75rem;
+        height: 12.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &::before {
+            content: '';
+            background-color: $color-bg-dark;
+            position: absolute;
+            width: 18.75rem;
+            height: 12.5rem;
+            z-index: -1;
+            top: 0.3125rem;
+            left: 0.3125rem;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 18.75rem;
+            height: 12.5rem;
+            border: 0.3125rem solid $color-highlight;
+            bottom: 0.3125rem;
+            right: 0.3125rem;
+        }
+    }
+
+    &__nav {
+        background-color: $color-bg-dark;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 1.25rem;
+    }
+
+    &__item {
+        list-style-type: none;
+        color: $color-white;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 0 1.25rem;
+        border-left: 0.25rem solid $color-highlight;
+    }
+
+    &__header {
+        font-size: 3.75rem;
+        font-weight: 300;
+        text-align: center;
+        margin-top: 0;
+        padding-top: 1.25rem;
+    }
+
+    &__selection {
+        background-color: $color-bg-light;
+
+        &--background-color {
+            background-color: #f7f7f7;
+        }
+    }
+}
+
+.selection {
+
+    &__title {
+        font-size: 2.06rem;
+        font-weight: 300;
+        text-align: center;
+        margin: 0;
+    }
+
+    &__description {
+        font-size: 1.1rem;
+        font-weight: 400;
+        font-style: italic;
+        max-width: 31.25rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    &__price {
+        color: $color-highlight;
+        text-align: center;
+        margin: 0;
+        padding-top: 0.3125rem;
+        padding-bottom: 2.5rem;
+    }
+}

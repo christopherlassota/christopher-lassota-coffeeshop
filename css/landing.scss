@@ -1,0 +1,251 @@
+@use './partials/global' as *;
+
+.header {
+    background-color: $color-bg-light;
+    width: 100%;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__container {
+        display: flex;
+        align-items: baseline;
+        padding-left: 1.25rem;
+    }
+
+    &__title {
+        color: $color-bg-dark;
+        margin-top: 1.25rem;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        display: inline-block;
+    }
+
+    &__link {
+        color: $color-bg-dark;
+        font-size: 1.3125rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 1.25rem;
+
+        &--highlight {
+            color: $color-highlight;
+        }
+    }
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem 0;
+
+    &__text {
+        width: 35vw;
+        margin: auto;
+    }
+
+    &__title {
+        font-size: 3.75rem;
+        font-weight: 300;
+    }
+
+    &__description {
+        margin-right: 35%;
+    }
+
+    &__button {
+        @include button-style($color-highlight, $color-white);
+        margin-top: 1.25rem;
+        position: relative;
+
+        &::before {
+            @include button-border(9.5rem);
+        }
+    }
+
+    &__image {
+        min-width: 20vw;
+        margin: auto;
+    }
+}
+
+.product {
+    background-color: #f7f7f7;
+
+    &__showcase {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__title {
+        font-size: 3.75rem;
+        font-weight: 300;
+        text-align: center;
+        margin: 0;
+        padding: 4rem 0;
+    }
+
+    &__card {
+        box-shadow: 0px 5px 9px 0 rgba(0, 0, 0, 0.25);
+        border-radius: 0.625rem;
+        background-color: $color-white;
+        text-align: center;
+        width: 23%;
+    }
+
+    &__text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $color-bg-light;
+        padding: 2.5rem 1.25rem;
+        border-radius: 0 0 0.625rem 0.625rem;
+    }
+
+    &__image {
+        min-height: 17.5rem;
+        padding: 1.25rem;
+    }
+
+    &__name {
+        font-size: 2.06rem;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    &__quantity {
+        margin: 0;
+        text-align: left;
+        color: $color-gray;
+    }
+
+    &__price {
+        font-size: 2.06rem;
+        font-weight: 700;
+        color: $color-highlight;
+        margin: 0;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__link {
+        @include button-style($color-highlight, $color-white);
+        position: relative;
+        margin: 5%;
+
+        &::before {
+            @include button-border(8.2rem)
+        }
+    }
+}
+
+.different {
+    display: flex;
+    justify-content: space-around;
+    background-color: $color-white;
+    padding: 10rem 0;
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 30%;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title {
+        margin: 1.25rem 0;
+    }
+
+    &_description {
+        margin: 0;
+    }
+
+    &__icon {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+    }
+
+    &__art {
+        width: 10%;
+    }
+
+    &__button {
+        @include button-style($color-highlight, $color-white);
+        position: relative;
+    
+        &::before {
+            @include button-border(11rem);
+        }
+    }
+
+    &__frame {
+        background-image: url(../assets/images/coldbrewbackground.png);
+        background-position: cover;
+        background-size: cover;
+        width: 25rem;
+        height: 25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &::after {
+            content: '';
+            background: transparent;
+            width: 25rem;
+            height: 25rem;
+            border: 0.3125rem solid $color-highlight;
+            position: absolute;
+            right: 0.625rem;
+            bottom: 0.625rem;
+        }
+    }
+}    
+
+.discount {
+    background-color: $color-white;
+    margin: 0;
+    min-height: 10vh;
+    padding: 10% 7%;
+
+    &__description {
+        color: $color-white;
+        font-size: 2.8rem;
+        font-weight: 400;
+        text-align: center;
+        background-color: $color-bg-dark;
+        margin: 0;
+        padding: 30px;
+    }
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: $color-bg-light;
+    padding: 3% 10%;
+    
+    &__title {
+        font-size: 2.06rem;
+        font-weight: 300;
+    }
+
+    &__image {
+            width: 3.125rem;
+    }
+}

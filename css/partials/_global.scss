@@ -4,7 +4,12 @@ $color-highlight: #5bacc3;
 $color-gray: #909090;
 $color-white: #FFF;
 
-@mixin flex-center() {}
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
 
 @mixin button-style($bg-color, $text-color) {
     background-color: $bg-color;
@@ -44,6 +49,11 @@ h2 {
 }
 
 h3 {
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+p {
     font-size: 1.125rem;
     font-weight: 400;
 }

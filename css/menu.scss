@@ -1,46 +1,40 @@
 @use './partials/global' as *;
 
 .header {
-
     background-color: $color-bg-light;
-    display: flex;
-    justify-content: space-between;
+    @include flex-center($justify: space-between);
+
+    &__container {
+        display: flex;
+        align-items: baseline;
+    }
 
     &__logo {
         padding-left: 1.25rem;
     }
 
     &__title {
-        font-size: 3.75rem;
         color: $color-bg-dark;
         margin: 0;
-        display: inline-block;
         padding: 1.25rem 0;
     }
 
-    &__name {
-        font-weight: 300;
-    }
-
     &__nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center();
     }
 
     &__item {
         list-style-type: none;
         display: inline-block;
         color: $color-bg-dark;
-        padding: 0px 1.25rem;
+        padding: 0 1.25rem;
     }
 
     &__link {
         font-size: 1.3125rem;
-        font-weight: 400;
         text-transform: uppercase;
 
-        &--selected {
+        &--highlight {
             color: $color-highlight;
         }
     }
@@ -49,30 +43,24 @@
 .menu {
 
     &__title-box {
+        @include flex-center;
         background-image: url(../assets/images/coffee-circle.jpg);
         height: 35rem;
         width: 100%;
         background-position: center;
         background-size: cover;
         margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         position: relative;
         z-index: 1;
     }
 
     &__title {
+        @include flex-center();
         text-transform: uppercase;
         text-align: center;
         color: $color-white;
-        font-weight: 300;
-        font-size: 3.75rem;
         width: 18.75rem;
         height: 12.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         position: relative;
 
         &::before {
@@ -118,8 +106,6 @@
     }
 
     &__header {
-        font-size: 3.75rem;
-        font-weight: 300;
         text-align: center;
         margin-top: 0;
         padding-top: 1.25rem;
@@ -144,8 +130,6 @@
     }
 
     &__description {
-        font-size: 1.1rem;
-        font-weight: 400;
         font-style: italic;
         max-width: 31.25rem;
         text-align: center;

@@ -19,6 +19,11 @@ h3 {
   font-weight: 400;
 }
 
+p {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
 a {
   text-decoration: none;
   font-weight: inherit;
@@ -28,23 +33,25 @@ a {
 .header {
   background-color: #fff0ed;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+.header__container {
+  display: flex;
+  align-items: baseline;
 }
 .header__logo {
   padding-left: 1.25rem;
 }
 .header__title {
-  font-size: 3.75rem;
   color: #393939;
   margin: 0;
-  display: inline-block;
   padding: 1.25rem 0;
-}
-.header__name {
-  font-weight: 300;
 }
 .header__nav {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -52,41 +59,40 @@ a {
   list-style-type: none;
   display: inline-block;
   color: #393939;
-  padding: 0px 1.25rem;
+  padding: 0 1.25rem;
 }
 .header__link {
   font-size: 1.3125rem;
-  font-weight: 400;
   text-transform: uppercase;
 }
-.header__link--selected {
+.header__link--highlight {
   color: #5bacc3;
 }
 
 .menu__title-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background-image: url(../assets/images/coffee-circle.jpg);
   height: 35rem;
   width: 100%;
   background-position: center;
   background-size: cover;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   z-index: 1;
 }
 .menu__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   text-transform: uppercase;
   text-align: center;
   color: #FFF;
-  font-weight: 300;
-  font-size: 3.75rem;
   width: 18.75rem;
   height: 12.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
 }
 .menu__title::before {
@@ -126,8 +132,6 @@ a {
   border-left: 0.25rem solid #5bacc3;
 }
 .menu__header {
-  font-size: 3.75rem;
-  font-weight: 300;
   text-align: center;
   margin-top: 0;
   padding-top: 1.25rem;
@@ -146,8 +150,6 @@ a {
   margin: 0;
 }
 .selection__description {
-  font-size: 1.1rem;
-  font-weight: 400;
   font-style: italic;
   max-width: 31.25rem;
   text-align: center;

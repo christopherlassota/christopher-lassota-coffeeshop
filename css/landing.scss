@@ -46,7 +46,6 @@
 
 .hero {
     @include flex-center($justify: space-around);
-    grid-template-columns: 1fr 1fr;
     padding: 3rem 0;
 
     &__text {
@@ -293,11 +292,33 @@
 }
 
 .footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    @include flex-center($justify: space-evenly);
     background-color: $color-bg-light;
-    padding: 3% 10%;
-    
+    padding: 3% 0;
+    position: relative;
+        
+    &::before, &::after {
+        content: '';
+        background-image: url(/assets/logos/coffee-beans-logo-and-footer.svg);
+        position: absolute;
+        width: 7.5rem;
+        height: 7.5rem;
+        opacity: 25%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &::before {
+        left: -2.188rem;
+        top: 10%;
+    }
+
+    &::after {
+        right: 0;
+        top: 50%;
+        width: 4.688rem;
+    }
+
     &__title {
         font-size: 2.06rem;
         font-weight: 300;

@@ -73,41 +73,60 @@ a {
 }
 
 .hero {
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
   padding: 3rem 0;
 }
 .hero__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
   width: 35vw;
-  margin: auto;
+}
+.hero__title {
+  margin: 0;
 }
 .hero__description {
   margin-right: 35%;
 }
-.hero__button {
-  background-color: #5bacc3;
+.hero__link {
+  background-color: transparent;
   color: #FFF;
   font-size: 1.3rem;
   font-weight: 400;
-  padding: 0.75rem 1.25rem 1rem 1.25rem;
-  border: none;
   text-transform: uppercase;
-  margin-top: 1.25rem;
+  text-align: center;
+  width: 8.75rem;
+  padding: 0.75rem 1.25rem 1rem 1.25rem;
+  outline: 2px solid #393939;
   position: relative;
+  z-index: 1;
+  transition: transform 0.1s ease;
+  margin-top: 1.25rem;
 }
-.hero__button::before {
+.hero__link::before {
   content: "";
-  background: transparent;
-  border: 2px solid #393939;
+  background: #5bacc3;
+  width: 11.375rem;
+  height: 3.625rem;
   position: absolute;
-  width: 9.5rem;
-  height: 3rem;
-  bottom: 0.3125rem;
-  right: 0.3125rem;
+  z-index: -1;
+  top: 0.3125rem;
+  left: 0.3125rem;
+  transition: transform 0.1s ease;
+}
+.hero__link:active {
+  transform: translate(0.3125rem, 0.3125rem);
+}
+.hero__link:active::before {
+  transform: translate(-0.3125rem, -0.3125rem);
 }
 .hero__image {
   min-width: 20vw;
-  margin: auto;
 }
 
 .product {
@@ -123,9 +142,10 @@ a {
   text-align: center;
   margin: 0;
   padding: 4rem 0;
+  z-index: 1;
 }
 .product__card {
-  box-shadow: 0px 5px 9px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.313rem 0.563rem 0 rgba(0, 0, 0, 0.25);
   border-radius: 0.625rem;
   background-color: #FFF;
   text-align: center;
@@ -160,32 +180,46 @@ a {
   color: #5bacc3;
   margin: 0;
 }
+.product__button-container {
+  position: relative;
+}
 .product__button {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin: 5%;
 }
 .product__link {
-  background-color: #5bacc3;
+  background-color: transparent;
   color: #FFF;
   font-size: 1.3rem;
   font-weight: 400;
-  padding: 0.75rem 1.25rem 1rem 1.25rem;
-  border: none;
   text-transform: uppercase;
+  text-align: center;
+  width: 8.75rem;
+  padding: 0.75rem 1.25rem 1rem 1.25rem;
+  outline: 2px solid #393939;
   position: relative;
-  margin: 5%;
+  z-index: 1;
+  transition: transform 0.1s ease;
 }
 .product__link::before {
   content: "";
-  background: transparent;
-  border: 2px solid #393939;
+  background: #5bacc3;
+  width: 11.375rem;
+  height: 3.625rem;
   position: absolute;
-  width: 8.2rem;
-  height: 3rem;
-  bottom: 0.3125rem;
-  right: 0.3125rem;
+  z-index: -1;
+  top: 0.3125rem;
+  left: 0.3125rem;
+  transition: transform 0.1s ease;
+}
+.product__link:active {
+  transform: translate(0.3125rem, 0.3125rem);
+}
+.product__link:active::before {
+  transform: translate(-0.3125rem, -0.3125rem);
 }
 
 .different {
@@ -220,25 +254,37 @@ a {
 .different__art {
   width: 10%;
 }
-.different__button {
-  background-color: #5bacc3;
+.different__link {
+  background-color: transparent;
   color: #FFF;
   font-size: 1.3rem;
   font-weight: 400;
-  padding: 0.75rem 1.25rem 1rem 1.25rem;
-  border: none;
   text-transform: uppercase;
+  text-align: center;
+  width: 8.75rem;
+  padding: 0.75rem 1.25rem 1rem 1.25rem;
+  outline: 2px solid #393939;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.1s ease;
   position: relative;
 }
-.different__button::before {
+.different__link::before {
   content: "";
-  background: transparent;
-  border: 2px solid #393939;
+  background: #5bacc3;
+  width: 11.375rem;
+  height: 3.625rem;
   position: absolute;
-  width: 11rem;
-  height: 3rem;
-  bottom: 0.3125rem;
-  right: 0.3125rem;
+  z-index: -1;
+  top: 0.3125rem;
+  left: 0.3125rem;
+  transition: transform 0.1s ease;
+}
+.different__link:active {
+  transform: translate(0.3125rem, 0.3125rem);
+}
+.different__link:active::before {
+  transform: translate(-0.3125rem, -0.3125rem);
 }
 .different__frame {
   display: flex;
@@ -262,6 +308,21 @@ a {
   right: 0.625rem;
   bottom: 0.625rem;
 }
+.different__picture {
+  background-clip: padding-box;
+  padding: 4rem 8rem;
+  z-index: 1;
+}
+.different__picture:hover {
+  animation: spin 2s linear infinite;
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .discount {
   background-color: #FFF;
@@ -276,7 +337,20 @@ a {
   text-align: center;
   background-color: #393939;
   margin: 0;
-  padding: 30px;
+  padding: 1.875rem;
+}
+.discount__description--blink {
+  animation: blink 2.5s linear infinite;
+  -webkit-animation: blink 2.5s linear infinite;
+  -moz-animation: blink 2.5s linear infinite;
+}
+@keyframes blink {
+  50% {
+    background-color: #5bacc3;
+  }
+  100% {
+    background-color: #393939;
+  }
 }
 
 .footer {

@@ -45,38 +45,48 @@
 }
 
 .hero {
-    display: grid;
+    @include flex-center($justify: space-around);
     grid-template-columns: 1fr 1fr;
     padding: 3rem 0;
 
     &__text {
+        @include flex-center(column, space-around, left);
         width: 35vw;
-        margin: auto;
+    }
+
+    &__title {
+        margin: 0;
     }
 
     &__description {
         margin-right: 35%;
     }
 
-    &__button {
+    &__link {
         @include button-style($color-highlight, $color-white);
         margin-top: 1.25rem;
-        position: relative;
 
         &::before {
-            @include button-border(9.5rem);
+            @include button-background($color-highlight);
+        }
+
+        &:active {
+            transform: translate(0.3125rem, 0.3125rem);
+
+            &::before {
+                transform: translate(-0.3125rem, -0.3125rem);
+            }
         }
     }
 
     &__image {
         min-width: 20vw;
-        margin: auto;
     }
 }
 
 .product {
     background-color: #f7f7f7;
-
+    
     &__showcase {
         @include flex-center($justify: space-evenly);
     }
@@ -85,10 +95,11 @@
         text-align: center;
         margin: 0;
         padding: 4rem 0;
+        z-index: 1;
     }
 
     &__card {
-        box-shadow: 0px 5px 9px 0 rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0.313rem 0.563rem 0 rgba(0, 0, 0, 0.25);
         border-radius: 0.625rem;
         background-color: $color-white;
         text-align: center;
@@ -126,17 +137,28 @@
         margin: 0;
     }
 
+    &__button-container {
+        position: relative;
+    }
+
     &__button {
         @include flex-center();
+        margin: 5%;
     }
 
     &__link {
         @include button-style($color-highlight, $color-white);
-        position: relative;
-        margin: 5%;
 
         &::before {
-            @include button-border(8.2rem)
+            @include button-background($color-highlight);
+        }
+
+        &:active {
+            transform: translate(0.3125rem, 0.3125rem);
+
+            &::before {
+                transform: translate(-0.3125rem, -0.3125rem);
+            }
         }
     }
 }
@@ -169,12 +191,20 @@
         width: 10%;
     }
 
-    &__button {
+    &__link {
         @include button-style($color-highlight, $color-white);
         position: relative;
     
         &::before {
-            @include button-border(11rem);
+            @include button-background($color-highlight);
+        }
+
+        &:active {
+            transform: translate(0.3125rem, 0.3125rem);
+
+            &::before {
+                transform: translate(-0.3125rem, -0.3125rem);
+            }
         }
     }
 
@@ -198,6 +228,30 @@
             bottom: 0.625rem;
         }
     }
+
+    &__picture {
+        background-clip: padding-box;
+        padding: 4rem 8rem;
+        z-index: 1;
+
+        &:hover {
+            animation:spin 2s linear infinite;
+            -webkit-animation:spin 2s linear infinite;
+            -moz-animation:spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            100% {transform: rotate(360deg);}
+        }
+
+        @-webkit-keyframes spin {
+            100% {-webkit-transform: rotate(360deg);}
+        }
+
+        @-moz-keyframes spin {
+            100% {-webkit-transform: rotate(360deg);}
+        }
+    }
 }    
 
 .discount {
@@ -213,7 +267,28 @@
         text-align: center;
         background-color: $color-bg-dark;
         margin: 0;
-        padding: 30px;
+        padding: 1.875rem;
+
+        &--blink {
+            animation: blink 2.5s linear infinite;
+            -webkit-animation: blink 2.5s linear infinite;
+            -moz-animation: blink 2.5s linear infinite;
+        }
+
+        @keyframes blink {
+            50% {background-color: $color-highlight;}
+            100% {background-color: $color-bg-dark;}
+        }
+        
+        @-webkit-keyframes blink {
+            50% {background-color: $color-highlight;}
+            100% {background-color: $color-bg-dark;}
+        }
+
+        @-moz-keyframes blink {
+            50% {background-color: $color-highlight;}
+            100% {background-color: $color-bg-dark;}
+        }
     }
 }
 

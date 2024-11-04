@@ -12,24 +12,30 @@ $color-white: #FFF;
 }
 
 @mixin button-style($bg-color, $text-color) {
-    background-color: $bg-color;
+    background-color: transparent;
     color: $text-color;
     font-size: 1.3rem;
     font-weight: 400;
-    padding: 0.75rem 1.25rem 1rem 1.25rem;
-    border: none;
     text-transform: uppercase;
+    text-align: center;
+    width: 8.75rem;
+    padding: 0.75rem 1.25rem 1rem 1.25rem;
+    outline: 2px solid $color-bg-dark;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.1s ease;
 }
 
-@mixin button-border($width) {
+@mixin button-background($bg-color) {
     content: '';
-    background: transparent;
-    border: 2px solid $color-bg-dark;
+    background: $bg-color;
+    width: 11.375rem;
+    height: 3.625rem;
     position: absolute;
-    width: $width;
-    height: 3rem;
-    bottom: 0.3125rem;
-    right: 0.3125rem;
+    z-index: -1;
+    top: 0.3125rem;
+    left: 0.3125rem;
+    transition: transform 0.1s ease;
 }
 
 body {

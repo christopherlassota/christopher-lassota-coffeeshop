@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/landing.css">
     <title>Coffee Shop - Home</title>
 </head>
@@ -37,9 +36,7 @@
                 <div class="hero__text">
                     <h1 class="hero__title">Nitro Coffee</h1>
                     <p class="hero__description">Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species</p>
-                    <a href="./pages/menu.html" class="hero__link">
-                        <button class="hero__button">SHOP NOW</button>
-                    </a>
+                    <a href="./pages/menu.html" class="hero__link">SHOP NOW</a>
                 </div>
             <img src="./assets/images/coffeebeans.png" alt="coffee bag" class="hero__image">
         </section>
@@ -85,8 +82,12 @@
                     </div>
                 </article>
             </section>
-
-            <a href="./pages/menu.html" class="product__button"><button class="product__link">VIEW ALL</button></a>
+            
+        <section class="product__button-container">
+            <div class="product__button">
+                <a href="./pages/menu.html" class="product__link">VIEW ALL</a>
+            </div>
+        </section>
 
         <section class="different">
             <div class="different__text">
@@ -97,9 +98,7 @@
                     <img src="./assets/logos/coffee-beans.svg" alt="iconography" class="different__art">
                     <img src="./assets/logos/coffee-cup.svg" alt="iconography" class="different__art">
                 </div>
-                <a href="./index.html" class="different__link">
-                    <button class="different__button">Learn more</button>
-                </a>
+                <a href="./index.html" class="different__link">Learn more</a>
             </div>
             <div class="different__frame">
                 <img src="./assets/images/tiltedcan.png" alt="titled can" class="different__picture">
@@ -107,7 +106,7 @@
         </section>
 
         <section class="discount">
-                <p class="discount__description">Get 20% off your first order with code: <strong>FirstNitro</strong></p>
+                <p class="discount__description discount__description--blink">Get 20% off your first order with code: <strong>FirstNitro</strong></p>
         </section>
     </main>
 
